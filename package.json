@@ -1,0 +1,30 @@
+{
+  "name": "fortnite",
+  "version": "1.0.0",
+  "description": "a fast fortnite wrapper.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon ./test/test_api.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tusta/-fortnite.git"
+  },
+  "keywords": [
+    "fortnite",
+    "api"
+  ],
+  "author": "VerTical",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tusta/-fortnite/issues"
+  },
+  "homepage": "https://github.com/Tusta/-fortnite#readme",
+  "dependencies": {
+    "node-fetch": "^2.5.0",
+    "qs": "^6.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
