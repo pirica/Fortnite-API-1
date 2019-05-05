@@ -3,13 +3,16 @@ A simple asynchronous fortnite api written in nodejs.
 
 ## Install
 use npm to install this project.
+
 Before installing, download and install Node.js. Node.js 0.10 or higher is required.
 ``` 
 $ npm install @Fortnite 
 ```
 ## Functions
-##### getUser( < Username >, < Platform >, < Time > ): return user stats by id or username.
-##### getStatus(): return true when server are up otherwise false.
+__getUser( < Username >, < Platform >, < Time > ):__ *return user stats by id or username.*
+
+__getStatus():__ *return true when server are up otherwise false.*
+
 ## Simple usage
 
 #### initalize the instance and gives the access to the api:
