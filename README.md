@@ -1,5 +1,5 @@
 # :fire: Fortnite-API
-[![Build Status](https://travis-ci.org/Tusta/fortnite.svg?branch=master)](https://travis-ci.org/Tusta/fortnite)
+[![Build Status](https://travis-ci.org/Tusta/Fortnite-API.svg?branch=master)](https://travis-ci.org/Tusta/Fortnite-API)
 [![npm version](https://badge.fury.io/js/%40fnite%2Fbattle-royale.svg)](https://badge.fury.io/js/%40fnite%2Fbattle-royale)
 
 
