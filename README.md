@@ -1,4 +1,5 @@
 # :fire: Fortnite-API
+[![Build Status](https://travis-ci.org/Tusta/fortnite.svg?branch=master)](https://travis-ci.org/Tusta/fortnite)
 [![npm version](https://badge.fury.io/js/%40fnite%2Fbattle-royale.svg)](https://badge.fury.io/js/%40fnite%2Fbattle-royale)
 
 
@@ -11,10 +12,6 @@ Before installing, download and install Node.js. Node.js 0.10 or higher is requi
 ``` 
 $ npm i @fnite/battle-royale 
 ```
-## Functions
-__getUser( < Username >, < Platform >, < Time > ):__ *return user stats by id or username.*
-
-__getStatus():__ *return true when server are up otherwise false.*
 
 ## Simple usage
 
