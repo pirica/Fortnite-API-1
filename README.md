@@ -1,4 +1,7 @@
 # :fire: Fortnite-API
+[![npm version](https://badge.fury.io/js/%40fnite%2Fbattle-royale.svg)](https://badge.fury.io/js/%40fnite%2Fbattle-royale)
+
+
 A simple asynchronous fortnite api written in nodejs.
 
 ## Install
@@ -75,3 +78,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+

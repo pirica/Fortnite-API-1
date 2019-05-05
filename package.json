@@ -4,6 +4,7 @@
   "description": "A simple asynchronous fortnite api written in nodejs.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "nodemon ./test/test_api.js"
   },
   "repository": {
