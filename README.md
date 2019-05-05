@@ -50,7 +50,10 @@ Fortnite.getUser('15bdae81a9b549bc98bbaad2502b0834', 'ps4')
 #### Get server status:
 ```js
 Fortnite.getStatus()
-    .then(status => console.log(status));
+    .then(status => console.log(status))
+    .catch(error => {
+        console.error(error);
+    })
 ```
 
 ## License
