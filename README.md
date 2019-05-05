@@ -1,2 +1,2 @@
-# -fortnite
+# fortnite
 A fast fortnite wrapper.

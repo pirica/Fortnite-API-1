@@ -138,6 +138,15 @@ class Client {
                 result[(e[4] == 'p2' ? 'solo' : e[4] == 'p10' ? 'duo' : 'squad')][e[1]] = v;
             }
         }
+
+        ['solo', 'duo', 'squad'].forEach(modes => this.setStats(result[modes]))
+    }
+
+    setStats(result) {
+        result['kd'] = parseFloat(parseInt(result.matchesplayed - result.placetop1) === 0 ? 0 : (parseInt(result.kills) / parseInt(result.matchesplayed - result.placetop1)).toFixed(2));
+        result['winrate'] = parseFloat(parseInt(result.matchesplayed) === 0 ? 0 : (parseInt(result.placetop1) / parseInt(result.matchesplayed) * 100).toFixed(2));
+        result['kpm'] = parseFloat(parseInt(result.matchesplayed) === 0 ? 0 : (parseInt(result.kills) / parseInt(result.matchesplayed)).toFixed(2));
+        result['spm'] = parseFloat(parseInt(result.matchesplayed) === 0 ? 0 : (parseInt(result.score) / parseInt(result.matchesplayed)).toFixed(2));
     }
 }
 
