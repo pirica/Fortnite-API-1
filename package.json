@@ -1,7 +1,7 @@
 {
-  "name": "fortnite",
+  "name": "@fnite/battle-royale",
   "version": "1.0.0",
-  "description": "a fast fortnite wrapper.",
+  "description": "A simple asynchronous fortnite api written in nodejs.",
   "main": "index.js",
   "scripts": {
     "test": "nodemon ./test/test_api.js"
@@ -26,5 +26,8 @@
   },
   "devDependencies": {
     "nodemon": "^1.19.0"
+  },
+  "directories": {
+    "test": "test"
   }
 }

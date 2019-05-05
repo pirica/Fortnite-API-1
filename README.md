@@ -6,7 +6,7 @@ use npm to install this project.
 
 Before installing, download and install Node.js. Node.js 0.10 or higher is required.
 ``` 
-$ npm install @Fortnite 
+$ npm i @fnite/battle-royale 
 ```
 ## Functions
 __getUser( < Username >, < Platform >, < Time > ):__ *return user stats by id or username.*
