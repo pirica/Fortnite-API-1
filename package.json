@@ -1,10 +1,10 @@
 {
   "name": "@fnite/battle-royale",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple asynchronous fortnite api written in nodejs.",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./lib/index.js",
     "test": "nodemon ./test/test_api.js"
   },
   "repository": {
