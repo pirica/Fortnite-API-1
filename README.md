@@ -13,6 +13,27 @@ Before installing, download and install Node.js. Node.js 0.10 or higher is requi
 $ npm i @fnite/battle-royale 
 ```
 
+## API
+
+```js
+const FortniteClient = require('@fnite/battle-royale');
+```
+
+### new FortniteClient([options]) **_returns the instance._**
+
+### *Options*
+
+- email
+    - Enter your Epic Games email.
+- password
+    - Enter your Epic Games password.
+- client_token
+    - Add your own client_token.
+- fortnite_token
+    - Add your own fortnite_token.
+- debug
+    - When set true, then you will get debug_information in the console.
+
 ## Simple usage
 
 #### initalize the instance and gives the access to the api:
