@@ -33,7 +33,8 @@ const FortniteClient = require('@fnite/battle-royale');
     - Add your own fortnite_token.
 - debug
     - When set true, then you will get debug_information in the console.
-
+- fastFetching
+    - Used for fast retrieval of stats, you save up to 0.5ms and every 5min the list will be cleared.
 ## Simple usage
 
 #### initalize the instance and gives the access to the api:
