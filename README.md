@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/%40fnite%2Fbattle-royale.svg)](https://badge.fury.io/js/%40fnite%2Fbattle-royale)
 
 
-A simple asynchronous fortnite api written in nodejs.
+A simple asynchronous Fortnite api written in Nodejs.
 
 ## Install
 use npm to install this project.
