@@ -78,6 +78,15 @@ Fortnite.getStatus()
     })
 ```
 
+#### Get news:
+```js
+Fortnite.getNews()
+    .then(news => console.log(status))
+    .catch(error => {
+        console.error(error);
+    })
+```
+
 ## License
 MIT License
 
