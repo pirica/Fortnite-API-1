@@ -7,7 +7,7 @@
     "start": "node ./src/FortniteAPI.js",
     "test": "nodemon ./test/test_api.js",
     "onGithub": "git add . && git commit -m ':fire:' && git push -u origin master",
-    "prod": "npm run onGithub && npm run publish"
+    "prod": "npm run onGithub && npm publish"
   },
   "repository": {
     "type": "git",
