@@ -34,7 +34,7 @@ const FortniteClient = require('@fnite/battle-royale');
 - debug
     - When set true, then you will get debug_information in the console.
 - fastFetching
-    - Stores stats of already called players, you save up to 0.5ms and every 5min the list will be cleared.
+    - Stores stats of already called players, you save up to 0.7ms.
 ## Simple usage
 
 #### initalize the instance and gives the access to the api:

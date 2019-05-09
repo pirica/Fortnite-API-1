@@ -5,7 +5,10 @@
   "main": "./src/FortniteAPI.js",
   "scripts": {
     "start": "node ./src/FortniteAPI.js",
-    "test": "nodemon ./test/test_api.js"
+    "test": "nodemon ./test/test_api.js",
+    "onGithub": "git add . && git commit -m ':fire:' && git push -u origin master",
+    "onNPM": "npm publish",
+    "prod": "npm run onGithub && onNPM"
   },
   "repository": {
     "type": "git",
