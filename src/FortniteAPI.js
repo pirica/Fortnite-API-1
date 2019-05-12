@@ -62,8 +62,6 @@ class FortniteAPI extends require('./FortniteClient') {
                 kills: 0,
                 matchesplayed: 0,
                 placetop1: 0,
-                placetop3: 0,
-                placetop6: 0,
                 minutesplayed: 0,
                 lastmodified: 0,
                 kpm: 0,
@@ -72,6 +70,15 @@ class FortniteAPI extends require('./FortniteClient') {
                 winrate: 0
             }
          });
+
+         this.result.solo.placetop10 = 0;
+         this.result.solo.placetop25 = 0;
+
+         this.result.duo.placetop12 = 0;
+         this.result.duo.placetop5 = 0;
+
+         this.result.squad.placetop3 = 0;
+         this.result.squad.placetop6 = 0;
     }
 
     getUser(username, platform = 'pc', time = 'alltime') {
