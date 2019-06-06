@@ -81,7 +81,16 @@ Fortnite.getStatus()
 #### Get news:
 ```js
 Fortnite.getNews()
-    .then(news => console.log(status))
+    .then(news => console.log(news))
+    .catch(error => {
+        console.error(error);
+    })
+```
+
+#### Get store:
+```js
+Fortnite.getStore()
+    .then(store => console.log(store))
     .catch(error => {
         console.error(error);
     })

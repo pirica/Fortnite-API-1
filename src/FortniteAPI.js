@@ -56,7 +56,7 @@ class FortniteAPI extends require('./FortniteClient') {
     }
 
     clearResult() {
-         ['solo', 'duo', 'squad'].forEach(modes => {
+        ['solo', 'duo', 'squad'].forEach(modes => {
             this.result[modes] = {
                 score: 0,
                 kills: 0,
@@ -69,16 +69,16 @@ class FortniteAPI extends require('./FortniteClient') {
                 kd: 0,
                 winrate: 0
             }
-         });
+        });
 
-         this.result.solo.placetop10 = 0;
-         this.result.solo.placetop25 = 0;
+        this.result.solo.placetop10 = 0;
+        this.result.solo.placetop25 = 0;
 
-         this.result.duo.placetop12 = 0;
-         this.result.duo.placetop5 = 0;
+        this.result.duo.placetop12 = 0;
+        this.result.duo.placetop5 = 0;
 
-         this.result.squad.placetop3 = 0;
-         this.result.squad.placetop6 = 0;
+        this.result.squad.placetop3 = 0;
+        this.result.squad.placetop6 = 0;
     }
 
     getUser(username, platform = 'pc', time = 'alltime') {
@@ -95,10 +95,10 @@ class FortniteAPI extends require('./FortniteClient') {
                     if (getLookup.displayName == undefined || getLookup.id == undefined) {
                         reject("this user does not exist.");
                     }
-                    
+
                     let user = this.getLastUser(getLookup.displayName, getLookup.id, platform);
 
-                    if(user && this.options.fastFetching) {
+                    if (user && this.options.fastFetching) {
                         resolve(user);
                     }
 
@@ -114,8 +114,8 @@ class FortniteAPI extends require('./FortniteClient') {
                             this.parseStats(this.result, getStats, platform);
                             if (this.options.fastFetching)
                                 this.pushUser(this.result);
-                            
-                            if((user == undefined && this.options.fastFetching) || !this.options.fastFetching)
+
+                            if ((user == undefined && this.options.fastFetching) || !this.options.fastFetching)
                                 resolve(this.result);
                         })
                 }).catch(e => reject(e));
@@ -142,6 +142,21 @@ class FortniteAPI extends require('./FortniteClient') {
                 })
                 .catch(e => reject(e));
         })
+    }
+
+    getStore() {
+        return this.getPromise('getStore', (resolve, reject) => {
+            this.waitForAccess().then(getToken => {
+                this.get(this.endpoints.store, {
+                        method: 'GET',
+                        headers: this.getHeaders(getToken.accessToken, false)
+                    })
+                    .then(getNews => {
+                        resolve(getNews);
+                    })
+                    .catch(e => reject(e));
+            })
+        });
     }
 }
 

@@ -20,7 +20,8 @@ class FortniteClient {
                 return `https://fortnite-public-service-prod11.ol.epicgames.com/fortnite/api/stats/accountId/${id}/bulk/window/${time || 'alltime'}`;
             },
             status: 'https://lightswitch-public-service-prod06.ol.epicgames.com/lightswitch/api/service/bulk/status?serviceId=Fortnite',
-            news: 'https://fortnitecontent-website-prod07.ol.epicgames.com/content/api/pages/fortnite-game'
+            news: 'https://fortnitecontent-website-prod07.ol.epicgames.com/content/api/pages/fortnite-game',
+            store: 'https://fortnite-public-service-prod11.ol.epicgames.com/fortnite/api/storefront/v2/catalog'
         };
 
         this.client = {
