@@ -101,23 +101,40 @@ class FortniteAPI extends require('./FortniteClient') {
                     if (user && this.options.fastFetching) {
                         resolve(user);
                     }
+                    
+                    this.result.displayName = getLookup.displayName;
+                    this.result.id = getLookup.id;
+                    this.result.platform = platform;
+                    this.clearResult();
 
-                    this.get(this.endpoints.getStats(getLookup.id, time), {
+                    if(platform == "pc" || platform == "xb1" || platform == "ps4") {
+                        this.get(this.endpoints.getStats(getLookup.id, time), {
+                                method: 'GET',
+                                headers: this.getHeaders(getToken.accessToken, false)
+                            })
+                            .then(getStats => {
+                                this.parseStats(this.result, getStats, platform);
+                                if (this.options.fastFetching)
+                                    this.pushUser(this.result);
+
+                                if ((user == undefined && this.options.fastFetching) || !this.options.fastFetching)
+                                    resolve(this.result);
+                            })
+                    } else if(platform == "gamepad" || platform == "keyboardmouse" || platform == "touch") {
+                        this.get(this.endpoints.getStatsv2(getLookup.id), {
                             method: 'GET',
                             headers: this.getHeaders(getToken.accessToken, false)
                         })
                         .then(getStats => {
-                            this.result.displayName = getLookup.displayName;
-                            this.result.id = getLookup.id;
-                            this.result.platform = platform;
-                            this.clearResult();
-                            this.parseStats(this.result, getStats, platform);
+                            this.parseStatsv2(this.result, getStats, platform);
+
                             if (this.options.fastFetching)
                                 this.pushUser(this.result);
 
                             if ((user == undefined && this.options.fastFetching) || !this.options.fastFetching)
                                 resolve(this.result);
-                        })
+                        });
+                    }
                 }).catch(e => reject(e));
 
             }).catch(e => reject(e));
@@ -153,6 +170,21 @@ class FortniteAPI extends require('./FortniteClient') {
                     })
                     .then(getNews => {
                         resolve(getNews);
+                    })
+                    .catch(e => reject(e));
+            })
+        });
+    }
+
+    getEvents() {
+        return this.getPromise('getEvents', (resolve, reject) => {
+            this.waitForAccess().then(getToken => {
+                this.get(this.endpoints.events, {
+                        method: 'GET',
+                        headers: this.getHeaders(getToken.accessToken, false)
+                    })
+                    .then(getEvents => {
+                        resolve(getEvents);
                     })
                     .catch(e => reject(e));
             })

@@ -1,12 +1,12 @@
 {
   "name": "@fnite/battle-royale",
-  "version": "1.0.9",
+  "version": "2.0.0",
   "description": "A simple asynchronous Fortnite api written in Nodejs.",
   "main": "./src/FortniteAPI.js",
   "scripts": {
     "start": "node ./src/FortniteAPI.js",
     "test": "nodemon ./test/test_api.js",
-    "onGithub": "git add . && git commit -m ':fire:' && git push -u origin master",
+    "onGithub": "git add . && git commit -m :fire: && git push -u origin master",
     "prod": "npm run onGithub && npm publish"
   },
   "repository": {
@@ -24,11 +24,11 @@
   },
   "homepage": "https://github.com/Tusta/-fortnite#readme",
   "dependencies": {
-    "node-fetch": "^2.5.0",
+    "node-fetch": "^2.6.0",
     "qs": "^6.7.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.0"
+    "nodemon": "^1.19.1"
   },
   "directories": {
     "test": "test"

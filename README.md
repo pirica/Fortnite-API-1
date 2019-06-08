@@ -35,6 +35,16 @@ const FortniteClient = require('@fnite/battle-royale');
     - When set true, then you will get debug_information in the console.
 - fastFetching
     - Stores stats of already called players, you save up to 0.7ms.
+
+### *platforms*
+
+- ps4
+- xb1
+- pc
+- touch
+- gamepad
+- keyboardmouse
+
 ## Simple usage
 
 #### initalize the instance and gives the access to the api:
@@ -91,6 +101,15 @@ Fortnite.getNews()
 ```js
 Fortnite.getStore()
     .then(store => console.log(store))
+    .catch(error => {
+        console.error(error);
+    })
+```
+
+#### Get events:
+```js
+Fortnite.getEvents()
+    .then(events => console.log(events))
     .catch(error => {
         console.error(error);
     })

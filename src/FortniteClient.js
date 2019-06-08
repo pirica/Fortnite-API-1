@@ -19,9 +19,13 @@ class FortniteClient {
             getStats: (id, time) => {
                 return `https://fortnite-public-service-prod11.ol.epicgames.com/fortnite/api/stats/accountId/${id}/bulk/window/${time || 'alltime'}`;
             },
+            getStatsv2: id => {
+                return `https://fortnite-public-service-prod11.ol.epicgames.com/fortnite/api/statsv2/account/${id}`;
+            },
             status: 'https://lightswitch-public-service-prod06.ol.epicgames.com/lightswitch/api/service/bulk/status?serviceId=Fortnite',
             news: 'https://fortnitecontent-website-prod07.ol.epicgames.com/content/api/pages/fortnite-game',
-            store: 'https://fortnite-public-service-prod11.ol.epicgames.com/fortnite/api/storefront/v2/catalog'
+            store: 'https://fortnite-public-service-prod11.ol.epicgames.com/fortnite/api/storefront/v2/catalog',
+            events: 'https://fortnite-public-service-prod11.ol.epicgames.com/fortnite/api/calendar/v1/timeline'
         };
 
         this.client = {
@@ -160,7 +164,26 @@ class FortniteClient {
                 result[(e[4] == 'p2' ? 'solo' : e[4] == 'p10' ? 'duo' : 'squad')][e[1]] = v;
             }
         }
+        this.parseSomething(result);
+    }
 
+    parseStatsv2(result, statsv2, platform) {
+        var stats = statsv2.stats;
+        Object.keys(stats).forEach(e => {
+            var name = e.split("_");
+            var value = stats[e];         
+            if(name[2] == platform) {
+                result[(name[5] == 'defaultsolo' ? 'solo' : name[5] == 'defaultduo' ? 'duo' : 'squad')][name[1]] = value;
+            }
+        });
+
+        delete result.duo.playersoutlived;
+        delete result.squad.playersoutlived;
+
+        this.parseSomething(result);
+    }
+
+    parseSomething(result) {
         ['solo', 'duo', 'squad'].forEach(modes => ((result) => {
             result['kd'] = parseFloat(parseInt(result.matchesplayed - result.placetop1) === 0 ? 0 : (parseInt(result.kills) / parseInt(result.matchesplayed - result.placetop1)).toFixed(2));
             result['winrate'] = parseFloat(parseInt(result.matchesplayed) === 0 ? 0 : (parseInt(result.placetop1) / parseInt(result.matchesplayed) * 100).toFixed(2));
