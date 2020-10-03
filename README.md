@@ -1,9 +1,8 @@
-# :fire: Fortnite-API
+# Fortnite-API
 [![Build Status](https://travis-ci.org/Tusta/Fortnite-API.svg?branch=master)](https://travis-ci.org/Tusta/Fortnite-API)
 [![npm version](https://badge.fury.io/js/%40fnite%2Fbattle-royale.svg)](https://badge.fury.io/js/%40fnite%2Fbattle-royale)
 
-
-A simple asynchronous Fortnite api written in Nodejs.
+A simple asynchronous Fortnite api for Node.
 
 ## Install
 use npm to install this project.
@@ -15,105 +14,29 @@ $ npm i @fnite/battle-royale
 
 ## API
 
+Go to [API Access](https://erwinkulasic.com/api) and create a new account after that you can copy your api token and paste into your project file.
+
 ```js
-const FortniteClient = require('@fnite/battle-royale');
+const Fortnite = require('@fnite/battle-royale')(<access_token>)
 ```
 
-### new FortniteClient([options]) **_returns the instance._**
-
-### *Options*
-
-- email
-    - Enter your Epic Games email.
-- password
-    - Enter your Epic Games password.
-- client_token
-    - Add your own client_token.
-- fortnite_token
-    - Add your own fortnite_token.
-- debug
-    - When set true, then you will get debug_information in the console.
-- fastFetching
-    - Stores stats of already called players, you save up to 0.7ms.
-
-### *platforms*
-
-- ps4
-- xb1
-- pc
-- touch
-- gamepad
-- keyboardmouse
-
-## Simple usage
+## Usage
 
 #### initalize the instance and gives the access to the api:
 ```js
-const FortniteClient = require('@fnite/battle-royale');
+const Fortnite = require('@fnite/battle-royale')("2ba1efe...");
 
-var Fortnite = new FortniteClient({
-    email: ' < email > ',
-    password: ' < password > '
-});
+Fortnite.upcoming().then(e => console.log(e));
+
+Fortnite.shop().then(e => console.log(e));
+
+Fortnite.playlist().then(e => console.log(e));
+
+Fortnite.news().then(e => console.log(e));
+
+//more is comming soon...
 ```
 
-#### Retrieve user statistics by username:
-```js
-Fortnite.getUser('SavageHaxor', 'ps4')
-    .then(result => {
-        console.log(result)
-    })
-    .catch(error => {
-        console.error(error);
-    })
-```
-
-#### Retrieve user statistics by id:
-```js
-Fortnite.getUser('15bdae81a9b549bc98bbaad2502b0834', 'ps4')
-    .then(result => {
-        console.log(result)
-    })
-    .catch(error => {
-        console.error(error);
-    })
-```
-
-#### Get server status:
-```js
-Fortnite.getStatus()
-    .then(status => console.log(status))
-    .catch(error => {
-        console.error(error);
-    })
-```
-
-#### Get news:
-```js
-Fortnite.getNews()
-    .then(news => console.log(news))
-    .catch(error => {
-        console.error(error);
-    })
-```
-
-#### Get store:
-```js
-Fortnite.getStore()
-    .then(store => console.log(store))
-    .catch(error => {
-        console.error(error);
-    })
-```
-
-#### Get events:
-```js
-Fortnite.getEvents()
-    .then(events => console.log(events))
-    .catch(error => {
-        console.error(error);
-    })
-```
 
 ## License
 MIT License

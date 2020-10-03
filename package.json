@@ -1,34 +1,32 @@
 {
   "name": "@fnite/battle-royale",
-  "version": "2.0.0",
-  "description": "A simple asynchronous Fortnite api written in Nodejs.",
-  "main": "./src/FortniteAPI.js",
+  "version": "2.0.1",
+  "description": "A simple asynchronous Fortnite api for Node.",
+  "main": "./src/fortnite.js",
   "scripts": {
-    "start": "node ./src/FortniteAPI.js",
-    "test": "nodemon ./test/test_api.js",
-    "onGithub": "git add . && git commit -m :fire: && git push -u origin master",
-    "prod": "npm run onGithub && npm publish"
+    "start": "node ./src/fortnite.js",
+    "test": "nodemon ./test/test_api.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tusta/-fortnite.git"
+    "url": "https://github.com/erwinkulasic/Fortnite-API.git"
   },
   "keywords": [
     "fortnite",
-    "api"
+    "api",
+    "free"
   ],
   "author": "VerTical",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Tusta/-fortnite/issues"
+    "url": "https://github.com/erwinkulasic/Fortnite-API/issues"
   },
-  "homepage": "https://github.com/Tusta/-fortnite#readme",
+  "homepage": "https://github.com/erwinkulasic/Fortnite-API/blob/master/README.md",
   "dependencies": {
-    "node-fetch": "^2.6.0",
-    "qs": "^6.7.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.4"
   },
   "directories": {
     "test": "test"
